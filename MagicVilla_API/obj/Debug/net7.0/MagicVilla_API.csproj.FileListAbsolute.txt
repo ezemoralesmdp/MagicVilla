@@ -78,3 +78,5 @@ C:\Capacitaciones\Propias\MagicVilla\MagicVilla_API\bin\Debug\net7.0\Microsoft.E
 C:\Capacitaciones\Propias\MagicVilla\MagicVilla_API\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 C:\Capacitaciones\Propias\MagicVilla\MagicVilla_API\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Capacitaciones\Propias\MagicVilla\MagicVilla_API\bin\Debug\net7.0\System.CodeDom.dll
+C:\Capacitaciones\Propias\MagicVilla\MagicVilla_API\bin\Debug\net7.0\AutoMapper.dll
+C:\Capacitaciones\Propias\MagicVilla\MagicVilla_API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

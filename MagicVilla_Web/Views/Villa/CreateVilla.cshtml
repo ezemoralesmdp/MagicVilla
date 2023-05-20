@@ -1,0 +1,80 @@
+﻿@model MagicVilla_Web.Models.Dto.VillaCreateDto
+
+@{
+    ViewData["Title"] = "CreateVilla";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="POST" asp-action="CreateVilla">
+    <div class="container border p-3">
+       <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                <h2 class="text-info">Create new villa</h2>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <label class="form-label">Villa name</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <label class="form-label">Fee</label>
+                    <input asp-for="Fee" class="form-control" />
+                    <span asp-validation-for="Fee" class="text-danger"></span>
+                </div> 
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <label class="form-label">Details</label>
+                    <textarea asp-for="Details" class="form-control"></textarea>
+                    <span asp-validation-for="Details" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <label class="form-label">Image</label>
+                    <input asp-for="ImageUrl" class="form-control" />
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <label class="form-label">Occupants</label>
+                    <input asp-for="Occupants" class="form-control" />
+                    <span asp-validation-for="Occupants" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <label class="form-label">Square meters</label>
+                    <input asp-for="SquareMeters" class="form-control" />
+                    <span asp-validation-for="SquareMeters" class="text-danger"></span>
+                </div>
+            </div>
+            
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <label class="form-label">Amenity</label>
+                    <textarea asp-for="Amenity" class="form-control"></textarea>
+                    <span asp-validation-for="Amenity" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 d-md-block mt-2">
+                <button type="submit" class="btn btn-primary">Send</button>
+                <a asp-controller="Villa" asp-action="IndexVilla" class="btn btn-success">Return</a>
+            </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

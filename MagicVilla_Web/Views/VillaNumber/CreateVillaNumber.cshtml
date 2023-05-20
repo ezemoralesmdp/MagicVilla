@@ -1,0 +1,48 @@
+﻿@model MagicVilla_Web.Models.ViewModel.VillaNumberViewModel
+
+@{
+    ViewData["Title"] = "CreateNumeroVilla";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="POST" asp-action="CreateVillaNumber">
+    <div class="container border p-3">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="row">
+            <h2 class="text-info">Create Villa Number</h2>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Villa Number</label>
+                <input asp-for="VillaNumber.VillaNo" class="form-control" />
+                <span asp-validation-for="VillaNumber.VillaNo" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Villa</label>
+                <select asp-for="VillaNumber.VillaId" class="form-select" asp-items="@Model.VillaList">
+                    <option value="">-- Villa select --</option>
+                </select>
+                <span asp-validation-for="VillaNumber.VillaId" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Special Detail</label>
+                <textarea asp-for="VillaNumber.SpecialDetails" class="form-control"></textarea>
+                <span asp-validation-for="VillaNumber.SpecialDetails" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="d-grid gap-2 d-md-block mt-2">
+            <button type="submit" class="btn btn-primary">Create</button>
+            <a asp-controller="VillaNumber" asp-action="IndexVillaNumber" class="btn btn-success">Return</a>
+        </div>
+    </div>
+</form>
+

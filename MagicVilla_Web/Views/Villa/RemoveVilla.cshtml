@@ -1,0 +1,76 @@
+﻿@model MagicVilla_Web.Models.Dto.VillaDto
+
+@{
+    ViewData["Title"] = "RemoveVilla";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="POST" asp-action="RemoveVilla">
+    <div class="container border p-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <input hidden asp-for="Id" />
+
+        <div class="row">
+            <h2 class="text-info">Remove villa</h2>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Villa name</label>
+                <input asp-for="Name" disabled class="form-control"></input>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Fee</label>
+                <input asp-for="Fee" disabled class="form-control" />
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Details</label>
+                <textarea asp-for="Details" disabled class="form-control"></textarea>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Image</label>
+                <input asp-for="ImageUrl" disabled class="form-control" />
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Occupants</label>
+                <input asp-for="Occupants" disabled class="form-control" />
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Square meters</label>
+                <input asp-for="SquareMeters" disabled class="form-control" />
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Amenity</label>
+                <textarea asp-for="Amenity" disabled class="form-control"></textarea>
+            </div>
+        </div>
+
+        <div class="d-grid gap-2 d-md-block mt-2">
+            <button type="submit" class="btn btn-danger">Remove</button>
+            <a asp-controller="Villa" asp-action="IndexVilla" class="btn btn-success">Return</a>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

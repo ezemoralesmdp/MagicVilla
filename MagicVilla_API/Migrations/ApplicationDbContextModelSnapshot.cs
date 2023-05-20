@@ -31,7 +31,6 @@ namespace MagicVilla_API.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Amenity")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DateInsert")
@@ -41,14 +40,12 @@ namespace MagicVilla_API.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Details")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Fee")
                         .HasColumnType("float");
 
                     b.Property<string>("ImageUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -70,8 +67,8 @@ namespace MagicVilla_API.Migrations
                         {
                             Id = 1,
                             Amenity = "",
-                            DateInsert = new DateTime(2023, 5, 8, 9, 36, 48, 87, DateTimeKind.Local).AddTicks(3643),
-                            DateUpdate = new DateTime(2023, 5, 8, 9, 36, 48, 87, DateTimeKind.Local).AddTicks(3652),
+                            DateInsert = new DateTime(2023, 5, 15, 23, 48, 39, 3, DateTimeKind.Local).AddTicks(1725),
+                            DateUpdate = new DateTime(2023, 5, 15, 23, 48, 39, 3, DateTimeKind.Local).AddTicks(1734),
                             Details = "Villa details...",
                             Fee = 200.0,
                             ImageUrl = "",
@@ -83,8 +80,8 @@ namespace MagicVilla_API.Migrations
                         {
                             Id = 2,
                             Amenity = "",
-                            DateInsert = new DateTime(2023, 5, 8, 9, 36, 48, 87, DateTimeKind.Local).AddTicks(3656),
-                            DateUpdate = new DateTime(2023, 5, 8, 9, 36, 48, 87, DateTimeKind.Local).AddTicks(3657),
+                            DateInsert = new DateTime(2023, 5, 15, 23, 48, 39, 3, DateTimeKind.Local).AddTicks(1737),
+                            DateUpdate = new DateTime(2023, 5, 15, 23, 48, 39, 3, DateTimeKind.Local).AddTicks(1738),
                             Details = "Villa details...",
                             Fee = 150.0,
                             ImageUrl = "",
@@ -106,7 +103,6 @@ namespace MagicVilla_API.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("SpecialDetails")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("VillaId")

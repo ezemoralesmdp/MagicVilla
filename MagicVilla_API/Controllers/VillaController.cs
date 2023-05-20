@@ -51,7 +51,7 @@ namespace MagicVilla_API.Controllers
             return _response;
         }
 
-        [HttpGet("id:int", Name = "GetVilla")]
+        [HttpGet("{id:int}", Name = "GetVilla")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -111,7 +111,7 @@ namespace MagicVilla_API.Controllers
 
                 if (await _villaRepo.Get(x => x.Name.ToLower() == villaCreateDto.Name.ToLower()) != null)
                 {
-                    ModelState.AddModelError("ExistingName", $"The villa with the name '{villaCreateDto.Name}' already exists.");
+                    ModelState.AddModelError("ErrorMessages", $"The villa with the name '{villaCreateDto.Name}' already exists.");
                     _response.IsSuccessful = false;
                     _response.statusCode = HttpStatusCode.BadRequest;
                     _response.SingleErrorMessage = $"The villa with the name '{villaCreateDto.Name}' already exists.";

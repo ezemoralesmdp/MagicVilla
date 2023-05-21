@@ -9,12 +9,12 @@ namespace MagicVilla_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuarioController : ControllerBase
+    public class UserController : ControllerBase
     {
         private readonly IUserRepository _userRepo;
         private APIResponse _response;
 
-        public UsuarioController(IUserRepository userRepo)
+        public UserController(IUserRepository userRepo)
         {
             _userRepo = userRepo;
             _response = new();

@@ -4,6 +4,7 @@ using MagicVilla_Web.Models;
 using MagicVilla_Web.Services.IServices;
 using Newtonsoft.Json;
 using System.Net;
+using System.Net.Http.Headers;
 using System.Text;
 
 namespace MagicVilla_Web.Services
@@ -59,6 +60,8 @@ namespace MagicVilla_Web.Services
                 }
 
                 HttpResponseMessage apiResponse = null; //Se crea un objeto HTTP que posee la respuesta de la API.
+                if (!string.IsNullOrEmpty(apiRequest.Token))
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiRequest.Token);
                 apiResponse = await client.SendAsync(message); //Se envia la solicitud HTTP. El resultado de la llamada es asignado a la variable apiResponse.
                 var apiContent = await apiResponse.Content.ReadAsStringAsync(); //ReadAsStringAsync() se utiliza para obtener el contenido como una cadena de texto.
                 //var APIResponse = JsonConvert.DeserializeObject<T>(apiContent); //Deseralizamos para pasar de una cadena JSON a un objeto del tipo especificado genericamente (T)

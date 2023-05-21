@@ -10,10 +10,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
 
-namespace MagicVilla_API.Controllers
+namespace MagicVilla_API.Controllers.v1
 {
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
+    [ApiVersion("1.0")]
     public class VillaController : ControllerBase
     {
         private readonly ILogger<VillaController> _logger;
@@ -169,7 +170,7 @@ namespace MagicVilla_API.Controllers
 
                 var villa = await _villaRepo.Get(x => x.Id == id);
 
-                if(villa == null)
+                if (villa == null)
                 {
                     _response.IsSuccessful = false;
                     _response.statusCode = HttpStatusCode.NotFound;

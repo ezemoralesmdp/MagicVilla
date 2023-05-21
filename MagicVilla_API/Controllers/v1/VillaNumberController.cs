@@ -11,10 +11,11 @@ using Microsoft.EntityFrameworkCore;
 using System.Data;
 using System.Net;
 
-namespace MagicVilla_API.Controllers
+namespace MagicVilla_API.Controllers.v1
 {
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
+    [ApiVersion("1.0")]
     public class VillaNumberController : ControllerBase
     {
         private readonly ILogger<VillaNumberController> _logger;
@@ -36,6 +37,7 @@ namespace MagicVilla_API.Controllers
             _response = new();
         }
 
+        [MapToApiVersion("1.0")]
         [HttpGet]
         [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -44,7 +46,7 @@ namespace MagicVilla_API.Controllers
             try
             {
                 _logger.LogInformation("Get all the villa numbers");
-                IEnumerable<VillaNumber> villaNumberList = await _villaNumberRepo.GetAll(propertiesInclude:"Villa");
+                IEnumerable<VillaNumber> villaNumberList = await _villaNumberRepo.GetAll(propertiesInclude: "Villa");
 
                 _response.Result = _mapper.Map<IEnumerable<VillaNumberDto>>(villaNumberList);
                 _response.statusCode = HttpStatusCode.OK;
@@ -78,7 +80,7 @@ namespace MagicVilla_API.Controllers
                     return BadRequest(_response);
                 }
 
-                var villaNumber = await _villaNumberRepo.Get(x => x.VillaNo == id, propertiesInclude:"Villa");
+                var villaNumber = await _villaNumberRepo.Get(x => x.VillaNo == id, propertiesInclude: "Villa");
 
                 if (villaNumber == null)
                 {
@@ -129,7 +131,7 @@ namespace MagicVilla_API.Controllers
                     return BadRequest(_response);
                 }
 
-                if(await _villaRepo.Get(x => x.Id == villaNumberCreateDto.VillaId) == null)
+                if (await _villaRepo.Get(x => x.Id == villaNumberCreateDto.VillaId) == null)
                 {
                     ModelState.AddModelError("ErrorMessages", $"The villa Id with the number '{villaNumberCreateDto.VillaId}' doesn't exists.");
                     _response.IsSuccessful = false;
@@ -185,7 +187,7 @@ namespace MagicVilla_API.Controllers
 
                 var villaNumber = await _villaNumberRepo.Get(x => x.VillaNo == id);
 
-                if(villaNumber == null)
+                if (villaNumber == null)
                 {
                     _response.IsSuccessful = false;
                     _response.statusCode = HttpStatusCode.NotFound;
@@ -222,7 +224,7 @@ namespace MagicVilla_API.Controllers
                 return BadRequest(_response);
             }
 
-            if(await _villaRepo.Get(x => x.Id == villaNumberUpdateDto.VillaId) == null)
+            if (await _villaRepo.Get(x => x.Id == villaNumberUpdateDto.VillaId) == null)
             {
                 ModelState.AddModelError("ErrorMessages", $"The villa Id with the number '{villaNumberUpdateDto.VillaId}' doesn't exists.");
                 return BadRequest(ModelState);

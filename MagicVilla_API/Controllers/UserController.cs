@@ -7,8 +7,9 @@ using System.Net;
 
 namespace MagicVilla_API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
+    [ApiVersionNeutral]
     public class UserController : ControllerBase
     {
         private readonly IUserRepository _userRepo;
@@ -25,7 +26,7 @@ namespace MagicVilla_API.Controllers
         {
             var loginResponse = await _userRepo.Login(model);
 
-            if(loginResponse.User == null || string.IsNullOrEmpty(loginResponse.Token))
+            if (loginResponse.User == null || string.IsNullOrEmpty(loginResponse.Token))
             {
                 _response.statusCode = HttpStatusCode.BadRequest;
                 _response.IsSuccessful = false;

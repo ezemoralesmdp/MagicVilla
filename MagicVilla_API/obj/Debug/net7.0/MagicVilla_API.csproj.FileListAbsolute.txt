@@ -80,3 +80,4 @@ C:\Capacitaciones\Propias\MagicVilla\MagicVilla_API\bin\Debug\net7.0\Mono.TextTe
 C:\Capacitaciones\Propias\MagicVilla\MagicVilla_API\bin\Debug\net7.0\System.CodeDom.dll
 C:\Capacitaciones\Propias\MagicVilla\MagicVilla_API\bin\Debug\net7.0\AutoMapper.dll
 C:\Capacitaciones\Propias\MagicVilla\MagicVilla_API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Capacitaciones\Propias\MagicVilla\MagicVilla_API\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

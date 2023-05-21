@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/fTngnCcBf+l2I+Iscd5KNj6l/1JDI02e49+hCSjhMiuKsr1P0gnBJUItsUOpzDOhVwCfLlhFgt34N6N5fCevQ==",
+  "dgSpecHash": "AoWteEADVt9ggd0TQ1z5JwYOBQgLLm4kykQhE3/gDV8WDq/VR9QtuynP7AeNAoSSASUCwPCDCCCQWbuxHGsW2Q==",
   "success": true,
   "projectFilePath": "C:\\Capacitaciones\\Propias\\MagicVilla\\MagicVilla_API\\MagicVilla_API.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\emorales\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\emorales\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\emorales\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\emorales\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.5\\microsoft.aspnetcore.authentication.jwtbearer.7.0.5.nupkg.sha512",
     "C:\\Users\\emorales\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\7.0.5\\microsoft.aspnetcore.jsonpatch.7.0.5.nupkg.sha512",
     "C:\\Users\\emorales\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\7.0.5\\microsoft.aspnetcore.mvc.newtonsoftjson.7.0.5.nupkg.sha512",
     "C:\\Users\\emorales\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.5\\microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",

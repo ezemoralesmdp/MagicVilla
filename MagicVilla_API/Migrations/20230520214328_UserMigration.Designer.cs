@@ -4,6 +4,7 @@ using MagicVilla_API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MagicVilla_API.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230520214328_UserMigration")]
+    partial class UserMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,7 +33,7 @@ namespace MagicVilla_API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Names")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
@@ -92,8 +95,8 @@ namespace MagicVilla_API.Migrations
                         {
                             Id = 1,
                             Amenity = "",
-                            DateInsert = new DateTime(2023, 5, 20, 18, 45, 29, 474, DateTimeKind.Local).AddTicks(7929),
-                            DateUpdate = new DateTime(2023, 5, 20, 18, 45, 29, 474, DateTimeKind.Local).AddTicks(7940),
+                            DateInsert = new DateTime(2023, 5, 20, 18, 43, 28, 672, DateTimeKind.Local).AddTicks(5708),
+                            DateUpdate = new DateTime(2023, 5, 20, 18, 43, 28, 672, DateTimeKind.Local).AddTicks(5720),
                             Details = "Villa details...",
                             Fee = 200.0,
                             ImageUrl = "",
@@ -105,8 +108,8 @@ namespace MagicVilla_API.Migrations
                         {
                             Id = 2,
                             Amenity = "",
-                            DateInsert = new DateTime(2023, 5, 20, 18, 45, 29, 474, DateTimeKind.Local).AddTicks(7943),
-                            DateUpdate = new DateTime(2023, 5, 20, 18, 45, 29, 474, DateTimeKind.Local).AddTicks(7944),
+                            DateInsert = new DateTime(2023, 5, 20, 18, 43, 28, 672, DateTimeKind.Local).AddTicks(5723),
+                            DateUpdate = new DateTime(2023, 5, 20, 18, 43, 28, 672, DateTimeKind.Local).AddTicks(5724),
                             Details = "Villa details...",
                             Fee = 150.0,
                             ImageUrl = "",

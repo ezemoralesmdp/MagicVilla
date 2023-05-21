@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using MagicVilla_API.Models.Specifications;
+using System.Linq.Expressions;
 
 namespace MagicVilla_API.Repository.IRepository
 {
@@ -6,6 +7,7 @@ namespace MagicVilla_API.Repository.IRepository
     {
         Task Create(T entity);
         Task<List<T>> GetAll(Expression<Func<T, bool>>? filter = null, string? propertiesInclude = null);
+        PagedList<T> GetAllPaginated(Parameters parameters, Expression<Func<T, bool>>? filter = null, string? propertiesInclude = null);
         Task<T> Get(Expression<Func<T, bool>>? filter = null, bool tracked = true, string? propertiesInclude = null);
         Task Remove(T entity);
         Task Save();

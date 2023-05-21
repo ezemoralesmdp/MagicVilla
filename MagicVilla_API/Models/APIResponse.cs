@@ -14,5 +14,6 @@ namespace MagicVilla_API.Models
         public List<string> ErrorMessages { get; set; }
         public string SingleErrorMessage { get; set; }
         public object Result { get; set; }
+        public int TotalPages { get; set; }
     }
 }
